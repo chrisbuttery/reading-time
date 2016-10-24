@@ -44,3 +44,8 @@ Install [Create Elm App](https://github.com/halfzebra/create-elm-app) and run `e
 % npm install -g elm-test
 % elm-test
 ```
+
+> [chrisbuttery.com](http://chrisbuttery.com) &nbsp;&middot;&nbsp;
+> GitHub [@chrisbuttery](https://github.com/chrisbuttery) &nbsp;&middot;&nbsp;
+> Twitter [@buttahz](https://twitter.com/buttahz) &nbsp;&middot;&nbsp;
+> elm-lang slack [@butters](http://elmlang.herokuapp.com/)
