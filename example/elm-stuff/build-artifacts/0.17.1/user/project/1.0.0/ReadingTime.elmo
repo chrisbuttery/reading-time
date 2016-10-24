@@ -1,0 +1,70 @@
+var _user$project$ReadingTime$getTime = function (minutes) {
+	return (minutes * 60) * 1000;
+};
+var _user$project$ReadingTime$getMinutes = F2(
+	function (words, wpm) {
+		return _elm_lang$core$Basics$toFloat(words) / A2(_elm_lang$core$Maybe$withDefault, 200, wpm);
+	});
+var _user$project$ReadingTime$getRoundedReadingTime = function (minutes) {
+	return _elm_lang$core$Basics$toString(
+		_elm_lang$core$Basics$ceiling(minutes));
+};
+var _user$project$ReadingTime$report = F2(
+	function (words, wpm) {
+		var minutes = A2(_user$project$ReadingTime$getMinutes, words, wpm);
+		return {
+			text: A2(
+				_elm_lang$core$Basics_ops['++'],
+				_user$project$ReadingTime$getRoundedReadingTime(minutes),
+				' min read'),
+			minutes: minutes,
+			time: _user$project$ReadingTime$getTime(minutes),
+			words: words
+		};
+	});
+var _user$project$ReadingTime$stripNewLine = function (str) {
+	return A4(
+		_elm_lang$core$Regex$replace,
+		_elm_lang$core$Regex$All,
+		_elm_lang$core$Regex$regex('\\n'),
+		function (_p0) {
+			return '';
+		},
+		str);
+};
+var _user$project$ReadingTime$stripReturn = function (str) {
+	return A4(
+		_elm_lang$core$Regex$replace,
+		_elm_lang$core$Regex$All,
+		_elm_lang$core$Regex$regex('\\r'),
+		function (_p1) {
+			return '';
+		},
+		str);
+};
+var _user$project$ReadingTime$stripTab = function (str) {
+	return A4(
+		_elm_lang$core$Regex$replace,
+		_elm_lang$core$Regex$All,
+		_elm_lang$core$Regex$regex('\\t'),
+		function (_p2) {
+			return '';
+		},
+		str);
+};
+var _user$project$ReadingTime$countWords = function (str) {
+	return (_elm_lang$core$Native_Utils.eq(str, '') || _elm_lang$core$Native_Utils.eq(str, ' ')) ? 0 : _elm_lang$core$List$length(
+		A2(_elm_lang$core$String$split, ' ', str));
+};
+var _user$project$ReadingTime$stats = F2(
+	function (str, wpm) {
+		var words = _user$project$ReadingTime$countWords(
+			_user$project$ReadingTime$stripNewLine(
+				_user$project$ReadingTime$stripNewLine(
+					_user$project$ReadingTime$stripTab(str))));
+		return A2(_user$project$ReadingTime$report, words, wpm);
+	});
+var _user$project$ReadingTime$Stats = F4(
+	function (a, b, c, d) {
+		return {text: a, minutes: b, time: c, words: d};
+	});
