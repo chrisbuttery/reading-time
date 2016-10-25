@@ -1,5 +1,5 @@
 {
-    "version": "1.2.0",
+    "version": "2.0.0",
     "summary": "Medium-esque reading stats in elm",
     "repository": "https://github.com/chrisbuttery/reading-time.git",
     "license": "BSD3",

@@ -12,7 +12,6 @@ module ReadingTime exposing (..)
 @docs countWords, getTime, report, stats, getRoundedReadingTime, getMinutes, getTime
 -}
 
-import Html exposing (text, Html, div)
 import String
 import Regex
 
