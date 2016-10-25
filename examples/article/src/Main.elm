@@ -4,7 +4,6 @@ import Html exposing (text, Html, div, p, h1, span)
 import Html.Attributes exposing (class)
 import Html.App
 import String
-import Debug
 import Ports
 import ScrollProgress
 import ReadingTime
