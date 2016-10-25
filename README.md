@@ -2,6 +2,8 @@
 
 Medium-esque reading stats in elm.
 
+![The happy Panda](https://cldup.com/3WtP2PHug5.png)
+
 ```shell
 elm package install chrisbuttery/reading-time
 ```
@@ -33,7 +35,7 @@ Pass in a string to count and an optional float value to calculate  `word per mi
 Checkout the demos.
 
 * [basic](http://chrisbuttery.github.io/reading-time/examples/basic/dist/index.html)
-* [article](http://chrisbuttery.github.io/reading-time/examples/basic/dist/index.html)
+* [article](http://chrisbuttery.github.io/reading-time/examples/article/dist/index.html)
 
 ## Building example
 
