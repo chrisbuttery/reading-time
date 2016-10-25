@@ -2,6 +2,8 @@
 
 Medium-esque reading stats in elm.
 
+![The happy Panda](https://cldup.com/3WtP2PHug5.png)
+
 ```shell
 elm package install chrisbuttery/reading-time
 ```
