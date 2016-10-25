@@ -30,8 +30,10 @@ Passing in a string to count and an option float to calculate  `word per minute`
 
 ### Example
 
-Try the [example](http://chrisbuttery.github.io/reading-time/example/dist/index.html)
+Checkout the demos.
 
+* [basic](http://chrisbuttery.github.io/reading-time/examples/basic/dist/index.html)
+* [article](http://chrisbuttery.github.io/reading-time/examples/basic/dist/index.html)
 
 ### Building example
 
