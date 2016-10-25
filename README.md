@@ -28,7 +28,11 @@ ReadingTime.stats str Nothing
 
 #### stats : String -> Maybe Float
 
-Pass in a string to count and an optional float value to calculate  `word per minute`.
+Pass in a string of words to count and an optional float value to calculate `word per minute` (Default: `200`).
+
+```elm
+ReadingTime.stats str 300
+```
 
 ## Example
 
