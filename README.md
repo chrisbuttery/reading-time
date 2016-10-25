@@ -31,7 +31,7 @@ ReadingTime.stats str Nothing
 Pass in a string of words to count and an optional float value to calculate `word per minute` (Default: `200`).
 
 ```elm
-ReadingTime.stats str 300
+ReadingTime.stats str (Just 300)
 ```
 
 ## Example
