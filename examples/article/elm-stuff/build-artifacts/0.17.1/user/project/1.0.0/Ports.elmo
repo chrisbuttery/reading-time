@@ -1,0 +1,19 @@
+var _user$project$Ports$onScroll = _elm_lang$core$Native_Platform.incomingPort(
+	'onScroll',
+	A2(
+		_elm_lang$core$Json_Decode$andThen,
+		A2(_elm_lang$core$Json_Decode_ops[':='], 'scrollTop', _elm_lang$core$Json_Decode$int),
+		function (scrollTop) {
+			return A2(
+				_elm_lang$core$Json_Decode$andThen,
+				A2(_elm_lang$core$Json_Decode_ops[':='], 'targetScrollHeight', _elm_lang$core$Json_Decode$int),
+				function (targetScrollHeight) {
+					return A2(
+						_elm_lang$core$Json_Decode$andThen,
+						A2(_elm_lang$core$Json_Decode_ops[':='], 'clientHeight', _elm_lang$core$Json_Decode$int),
+						function (clientHeight) {
+							return _elm_lang$core$Json_Decode$succeed(
+								{scrollTop: scrollTop, targetScrollHeight: targetScrollHeight, clientHeight: clientHeight});
+						});
+				});
+		}));

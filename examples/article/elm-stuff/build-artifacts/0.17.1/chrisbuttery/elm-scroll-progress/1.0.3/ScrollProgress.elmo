@@ -1,0 +1,88 @@
+var _chrisbuttery$elm_scroll_progress$ScrollProgress$view = function (model) {
+	var transition = _elm_lang$core$Native_List.fromArray(
+		[
+			{ctor: '_Tuple2', _0: 'transition', _1: '0.1s width'},
+			{
+			ctor: '_Tuple2',
+			_0: 'width',
+			_1: A2(
+				_elm_lang$core$Basics_ops['++'],
+				_elm_lang$core$Basics$toString(model.progress),
+				'%')
+		}
+		]);
+	var to = A2(_elm_lang$core$Maybe$withDefault, '', model.to);
+	var from = A2(_elm_lang$core$Maybe$withDefault, '', model.from);
+	var color = A2(_elm_lang$core$Maybe$withDefault, '', model.color);
+	var background = (_elm_lang$core$Native_Utils.eq(color, '') && ((!_elm_lang$core$Native_Utils.eq(from, '')) && (!_elm_lang$core$Native_Utils.eq(to, '')))) ? _elm_lang$core$Native_List.fromArray(
+		[
+			{ctor: '_Tuple2', _0: 'background', _1: from},
+			{
+			ctor: '_Tuple2',
+			_0: 'background',
+			_1: A2(
+				_elm_lang$core$Basics_ops['++'],
+				'linear-gradient( to right, ',
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					from,
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						', ',
+						A2(_elm_lang$core$Basics_ops['++'], to, ' )'))))
+		}
+		]) : ((!_elm_lang$core$Native_Utils.eq(color, '')) ? _elm_lang$core$Native_List.fromArray(
+		[
+			{ctor: '_Tuple2', _0: 'background', _1: color}
+		]) : _elm_lang$core$Native_List.fromArray(
+		[
+			{ctor: '_Tuple2', _0: 'background', _1: 'red'}
+		]));
+	var styles = A2(_elm_lang$core$List$append, background, transition);
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html_Attributes$class('scroll-progress'),
+				_elm_lang$html$Html_Attributes$style(styles)
+			]),
+		_elm_lang$core$Native_List.fromArray(
+			[]));
+};
+var _chrisbuttery$elm_scroll_progress$ScrollProgress$calculateProgress = function (attributes) {
+	var clientHeight = _elm_lang$core$Basics$toFloat(attributes.clientHeight);
+	var targetScrollHeight = _elm_lang$core$Basics$toFloat(attributes.targetScrollHeight);
+	var scrollTop = _elm_lang$core$Basics$toFloat(attributes.scrollTop);
+	var progress = _elm_lang$core$Basics$ceiling((scrollTop / (targetScrollHeight - clientHeight)) * 100);
+	return (_elm_lang$core$Native_Utils.cmp(progress, 100) > 0) ? 100 : ((_elm_lang$core$Native_Utils.cmp(progress, 0) < 0) ? 0 : progress);
+};
+var _chrisbuttery$elm_scroll_progress$ScrollProgress$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		return {
+			ctor: '_Tuple2',
+			_0: _elm_lang$core$Native_Utils.update(
+				model,
+				{
+					progress: _chrisbuttery$elm_scroll_progress$ScrollProgress$calculateProgress(_p0._0)
+				}),
+			_1: _elm_lang$core$Platform_Cmd$none
+		};
+	});
+var _chrisbuttery$elm_scroll_progress$ScrollProgress$initialModel = {
+	progress: 0,
+	color: _elm_lang$core$Maybe$Just('#1684f6'),
+	from: _elm_lang$core$Maybe$Nothing,
+	to: _elm_lang$core$Maybe$Nothing
+};
+var _chrisbuttery$elm_scroll_progress$ScrollProgress$Model = F4(
+	function (a, b, c, d) {
+		return {progress: a, color: b, from: c, to: d};
+	});
+var _chrisbuttery$elm_scroll_progress$ScrollProgress$ScrollAttributes = F3(
+	function (a, b, c) {
+		return {scrollTop: a, targetScrollHeight: b, clientHeight: c};
+	});
+var _chrisbuttery$elm_scroll_progress$ScrollProgress$Progress = function (a) {
+	return {ctor: 'Progress', _0: a};
+};
