@@ -20,9 +20,9 @@ import Regex
 {-| Stats type
 -}
 type alias Stats =
-    { text : String
+    { duration : String
     , minutes : Float
-    , time : Float
+    , time : Int
     , words : Int
     }
 
@@ -80,9 +80,12 @@ getMinutes words wpm =
 
 {-| Multiple a float value by 60 and then 1000
 -}
-getTime : Float -> Float
+getTime : Float -> Int
 getTime minutes =
-    minutes * 60 * 1000
+    minutes
+        * 60
+        * 1000
+        |> round
 
 
 {-| Return a specific Stats record
@@ -93,7 +96,7 @@ report words wpm =
         minutes =
             getMinutes words wpm
     in
-        { text = (getRoundedReadingTime minutes) ++ " min read"
+        { duration = (getRoundedReadingTime minutes) ++ " min read"
         , minutes = minutes
         , time = getTime minutes
         , words = words
