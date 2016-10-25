@@ -22,25 +22,32 @@ ReadingTime.stats str Nothing
  -}
 ```
 
-### API
+## API
 
 #### stats : String -> Maybe Float
 
-Passing in a string to count and an option float to calculate  `word per minute`.
+Pass in a string to count and an optional float value to calculate  `word per minute`.
 
-### Example
+## Example
 
-Try the [example](http://chrisbuttery.github.io/reading-time/example/dist/index.html)
+Checkout the demos.
 
+* [basic](http://chrisbuttery.github.io/reading-time/examples/basic/dist/index.html)
+* [article](http://chrisbuttery.github.io/reading-time/examples/basic/dist/index.html)
 
-### Building example
+## Building example
 
 Install [Create Elm App](https://github.com/halfzebra/create-elm-app) and run `elm-app build` or `elm-app start` inside of `/example`.
 
 
-### Tests
+## Tests
 
 ```bash
 % npm install -g elm-test
 % elm-test
 ```
+
+> [chrisbuttery.com](http://chrisbuttery.com) &nbsp;&middot;&nbsp;
+> GitHub [@chrisbuttery](https://github.com/chrisbuttery) &nbsp;&middot;&nbsp;
+> Twitter [@buttahz](https://twitter.com/buttahz) &nbsp;&middot;&nbsp;
+> elm-lang slack [@butters](http://elmlang.herokuapp.com/)
