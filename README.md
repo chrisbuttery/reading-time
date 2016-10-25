@@ -33,7 +33,7 @@ Pass in a string to count and an optional float value to calculate  `word per mi
 Checkout the demos.
 
 * [basic](http://chrisbuttery.github.io/reading-time/examples/basic/dist/index.html)
-* [article](http://chrisbuttery.github.io/reading-time/examples/basic/dist/index.html)
+* [article](http://chrisbuttery.github.io/reading-time/examples/article/dist/index.html)
 
 ## Building example
 
